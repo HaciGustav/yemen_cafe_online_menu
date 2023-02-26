@@ -1,6 +1,7 @@
-import { Box, Button } from '@mui/material';
+import { Box, IconButton } from '@mui/material';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 
 const Footer = () => {
     const navigate = useNavigate();
@@ -13,9 +14,9 @@ const Footer = () => {
                 alignItems: 'center',
                 color: '#fff',
             }}>
-            <Button variant="contained" onClick={() => navigate('/admin')}>
-                admin
-            </Button>
+            <IconButton onClick={() => navigate('/admin')}>
+                <AdminPanelSettingsIcon sx={{ color: '#fff' }} />
+            </IconButton>
         </Box>
     );
 };

@@ -28,6 +28,8 @@ function ChildModal({
     handleClose,
     setOpen,
     heading,
+    setData,
+    data,
 }) {
     const [addExtra, setAddExtra] = useState({});
 
@@ -52,7 +54,7 @@ function ChildModal({
     };
 
     const handleDelete = () => {
-        deleteItem(item?.id, heading);
+        deleteItem(item?.id, heading, setData, data);
         handleClose();
     };
 
@@ -351,6 +353,8 @@ export default function AddModal({ item, heading, setData, data }) {
                             setOpen={setOpen}
                             item={item}
                             heading={heading}
+                            setData={setData}
+                            data={data}
                         />
                     </Box>
                 </Box>

@@ -101,6 +101,7 @@ export const addItem = async (e, value, colType, setData, data) => {
     const colRef = collection(db, colType?.toLowerCase());
     const newData = {
         ...value,
+        id: 'temp',
         allergene: value?.allergene || '',
         inhalt: value?.inhalt || '',
         extra: value?.extra ? value?.extra : [],
@@ -116,10 +117,19 @@ export const addItem = async (e, value, colType, setData, data) => {
     }
 };
 
-export const deleteItem = async (id, colType) => {
+export const deleteItem = async (id, colType, setData, data) => {
     const docRef = doc(db, colType.toLowerCase(), id);
 
+    const deleteData = () => {
+        const tempData = [...data];
+        let objToFind = tempData.find((item) => item.id === id);
+        const index = tempData.indexOf(objToFind);
+        tempData.splice(index, 1);
+        setData([...tempData]);
+    };
+
     try {
+        deleteData();
         deleteDoc(docRef);
         toastSuccessNotify('Speise erfolgreich gelöscht..');
     } catch (error) {

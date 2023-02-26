@@ -7,7 +7,7 @@ import AddModal from './AddModal';
 
 import Heading from './Heading';
 
-const MenuItem = ({ item, heading }) => {
+const MenuItem = ({ item, heading, data, setData }) => {
     const { allergene, title, extra, preise, inhalt, menu } = item;
 
     const { currentUser } = useAuthContext();
@@ -159,7 +159,14 @@ const MenuItem = ({ item, heading }) => {
                         )
                 )}
             </Box>
-            {currentUser && <AddModal heading={heading} item={item} />}
+            {currentUser && (
+                <AddModal
+                    heading={heading}
+                    item={item}
+                    data={data}
+                    setData={setData}
+                />
+            )}
         </Container>
     );
 };
@@ -178,7 +185,13 @@ const MenuComp = ({ heading, data, setData }) => {
                         rowGap: '5px',
                     }}>
                     {data?.map((item, i) => (
-                        <MenuItem key={i} heading={heading} item={item} />
+                        <MenuItem
+                            key={i}
+                            heading={heading}
+                            item={item}
+                            data={data}
+                            setData={setData}
+                        />
                     ))}
                 </Box>
 
