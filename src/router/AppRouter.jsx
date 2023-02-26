@@ -10,8 +10,8 @@ const AppRouter = () => {
             <Routes>
                 <Route path="/" element={<Dashboard />}>
                     <Route index element={<Home />} />
+                    <Route path="/admin" element={<Login />} />
                 </Route>
-                <Route path="/admin" element={<Login />} />
             </Routes>
         </BrowserRouter>
     );
