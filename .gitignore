@@ -24,3 +24,5 @@ yarn-error.log*
 
 #...info
 /info.txt
+
+/.env
