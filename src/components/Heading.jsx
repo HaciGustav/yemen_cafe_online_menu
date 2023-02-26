@@ -82,7 +82,6 @@ const Heading = ({ heading }) => {
                         height: '100%',
                         zIndex: '5',
                         color: '#fff',
-                        WebkitTextStroke: '1px #000',
                     }}>
                     {heading}
                 </Typography>
