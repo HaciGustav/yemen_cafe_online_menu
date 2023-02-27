@@ -44,6 +44,14 @@ const Dashboard = (props) => {
         setMobileOpen(!mobileOpen);
     };
 
+    const scroll = (id) => {
+        const element = document.getElementById(id);
+        element.scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => {
+            setMobileOpen(false);
+        }, 750);
+    };
+
     const drawer = (
         <div>
             <Toolbar />
@@ -58,43 +66,46 @@ const Dashboard = (props) => {
                     { name: 'Salate', img: salat },
                     { name: 'Grill', img: grill },
                     { name: 'Kinder Menu', img: kind },
+                    { name: 'Desserts', img: dessert },
+                    { name: 'Künefe & Katmer', img: kunefe },
                     { name: 'Beilagen', img: beilage },
+                    { name: 'Türkische Kaffee', img: t_kaffee },
                     { name: 'Heißgetränke', img: heiss },
 
-                    { name: 'Türkische Kaffee', img: t_kaffee },
-                    { name: 'Künefe & Katmer', img: kunefe },
-                    { name: 'Desserts', img: dessert },
                     { name: 'Cocktail & Shake', img: cocktail },
                     { name: 'Kaffee Sorten', img: kaffee },
                     { name: 'Kalte Getränke', img: kaltGet },
                 ].map((x, index) => (
                     <ListItem
                         key={index}
-                        onClick={() => setMobileOpen(false)}
+                        onClick={() => {
+                            scroll(x.name);
+                        }}
                         disablePadding>
-                        <a
-                            href={`#${x.name}`}
+                        {/* <a
+                            // href={`#${x.name}`}
+                            href="#"
                             style={{
                                 textDecoration: 'none',
                                 color: 'white',
                                 width: '100%',
+                            }}> */}
+                        <ListItemButton
+                            sx={{
+                                margin: '0',
+                                display: 'flex',
+                                justifyContent: 'space-between',
                             }}>
-                            <ListItemButton
+                            <ListItemText primary={'⩥' + x.name} />
+                            <Avatar
                                 sx={{
-                                    margin: '0',
-                                    display: 'flex',
-                                    justifyContent: 'space-between',
-                                }}>
-                                <ListItemText primary={'⩥' + x.name} />
-                                <Avatar
-                                    sx={{
-                                        width: '3rem',
-                                        height: '3rem',
-                                    }}
-                                    src={x.img}
-                                />
-                            </ListItemButton>
-                        </a>
+                                    width: '3rem',
+                                    height: '3rem',
+                                }}
+                                src={x.img}
+                            />
+                        </ListItemButton>
+                        {/* </a> */}
                     </ListItem>
                 ))}
             </List>

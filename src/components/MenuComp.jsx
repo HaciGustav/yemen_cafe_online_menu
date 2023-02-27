@@ -175,7 +175,7 @@ const MenuComp = ({ heading, data, setData }) => {
     const { currentUser } = useAuthContext();
     return (
         <>
-            <Box>
+            <Box id={heading}>
                 <Heading heading={heading} />
                 <Box
                     sx={{

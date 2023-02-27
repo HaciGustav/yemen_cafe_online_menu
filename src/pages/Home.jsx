@@ -148,7 +148,7 @@ const Home = () => {
                                     marginRight: '4px',
                                 }}
                             />
-                            {/* <span>yemenkahvesiwien</span> */}
+                            <span>yemenkahvesiwien</span>
                         </Link>
                         <Link
                             sx={{
@@ -168,7 +168,7 @@ const Home = () => {
                                     marginRight: '4px',
                                 }}
                             />
-                            {/* <span>yemenkahvesi_wien</span> */}
+                            <span>yemenkahvesi_wien</span>
                         </Link>
                         <Link
                             sx={{
@@ -188,7 +188,7 @@ const Home = () => {
                                     marginRight: '4px',
                                 }}
                             />
-                            {/* <span>yemenkaffeewien</span> */}
+                            <span>yemenkaffeewien</span>
                         </Link>
                     </Box>
                 </Box>
@@ -237,15 +237,14 @@ const Home = () => {
                 heading={'Kinder Menu'}
             />
             <MenuComp
-                data={kunefe}
-                setData={setKunefe}
-                heading={'Künefe & Katmer'}
-            />
-
-            <MenuComp
                 data={desserts}
                 setData={setDesserts}
                 heading={'Desserts'}
+            />
+            <MenuComp
+                data={kunefe}
+                setData={setKunefe}
+                heading={'Künefe & Katmer'}
             />
 
             <MenuComp
@@ -270,14 +269,14 @@ const Home = () => {
                 heading={'Cocktail & Shake'}
             />
             <MenuComp
-                data={kalteGetranke}
-                setData={setKalteGetranke}
-                heading={'Kalte Getränke'}
-            />
-            <MenuComp
                 data={specialKaffee}
                 setData={setSpecialKaffee}
                 heading={'Kaffee Sorten'}
+            />
+            <MenuComp
+                data={kalteGetranke}
+                setData={setKalteGetranke}
+                heading={'Kalte Getränke'}
             />
             <Footer />
         </Box>

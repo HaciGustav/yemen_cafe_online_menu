@@ -8,8 +8,11 @@ const Loading = () => {
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-
+        // border: '2px solid red',
+        borderRadius: '50%',
         zIndex: '10',
+        padding: '2rem',
+        boxShadow: '2px 0 15px #74000088',
     };
 
     return (
@@ -24,15 +27,21 @@ const Loading = () => {
             <Box sx={{ ...style }}>
                 <ClimbingBoxLoader
                     size={20}
-                    speedMultiplier={1.5}
-                    color="#f30000"
+                    speedMultiplier={1.1}
+                    color="#9c0000"
                 />
             </Box>
-            {/* <Box sx={{ ...style, borderColor: 'green' }}></Box>
-            <Box sx={{ ...style, borderColor: 'blue' }}></Box>
-            <Box sx={{ ...style, borderColor: 'magenta' }}></Box>
-            <Box sx={{ ...style, borderColor: 'orange' }}></Box>
-            <Box sx={{ ...style, borderColor: 'black' }}></Box> */}
+            <Box
+                sx={{
+                    ...style,
+                    transform: 'translate(-50%, -50%) rotate(180deg)',
+                }}>
+                <ClimbingBoxLoader
+                    size={20}
+                    speedMultiplier={1.1}
+                    color="#9c0000"
+                />
+            </Box>
         </Box>
     );
 };
