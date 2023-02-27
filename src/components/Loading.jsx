@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 import React from 'react';
-import { ClimbingBoxLoader, GridLoader } from 'react-spinners';
+import { GridLoader } from 'react-spinners';
 
 const Loading = () => {
     const style = {
